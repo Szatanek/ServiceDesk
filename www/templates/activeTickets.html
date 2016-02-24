@@ -1,0 +1,13 @@
+<ion-view view-title="Active tickets">
+    <ion-nav-buttons side="left">
+        <a class="button icon icon-left ion-document" ng-if="canLogTicket()" href="#/ticket/new">Log new ticket</a>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list" ng-repeat="ticket in tickets">
+            <a class="item" ui-sref="ticket.details" ng-class="{ 'item-icon-right': ticket.alert || ticket.flag }" ng-click='setTicketDetails(ticket)'>
+                <i ng-class="{'icon ion-alert': ticket.alert, 'icon ion-flag': ticket.flag}"></i>
+                {{ ticket.title }}
+            </a>
+        </div>
+    </ion-content>
+ </ion-view>

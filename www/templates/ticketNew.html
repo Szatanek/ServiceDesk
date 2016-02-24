@@ -1,0 +1,16 @@
+<ion-view view-title="New ticket">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" placeholder="Title" ng-model="newTicket.title" />
+            </label>
+            <label class="item item-input">
+                <textarea type="text" rows="5" placeholder="Description" ng-model="newTicket.description"></textarea>
+            </label>
+        </div>
+        <div class="button-bar">
+            <button class="button button-large button-assertive" ng-click="clearTicket()" ui-sref="tab.active">Cancel</button>
+            <button class="button button-large button-positive" ng-click="logTicket()">Log new ticket</button>
+        </div>
+    </ion-content>
+ </ion-view>

@@ -1,0 +1,16 @@
+<ion-view view-title="Login to Service Desk">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">User name</span>
+                <input type="text" placeholder="Type here" ng-model="data.login" />
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="Type here" ng-model="data.password" />
+            </label>
+        </div>
+        <span ng-bind="resultMessage"></span>
+        <button class="button button-full button-positive" ng-click="authenticate()">Sign in</button>
+    </ion-content>
+ </ion-view>
