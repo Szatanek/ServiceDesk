@@ -1,10 +1,25 @@
-<ion-view view-title="About">
+<ion-view view-title="O programie">
     <ion-nav-buttons side="left">
-        <a class="button icon icon-left ion-document" ng-if="canLogTicket()" href="#/ticket/new">Log new ticket</a>
+        <a class="button icon icon-left ion-document" ng-if="canLogTicket()" href="#/ticket/new">Zaloguj nowe zgłoszenie.</a>
     </ion-nav-buttons>
     <ion-content class="padding">
         <p>
-            To jest About.
+            Aplikacja ServiceDesk służy do logowania i przeglądania zgłoszeń.
+        </p>
+        <p>
+            W zakładce "Aktywne zgłoszenia" znajdują się zgłoszenia w statusach "Otwarte zgłoszenie" i "W trakcie realizacji".
+            <br>
+            W zakładce "Zamknięte zgłoszenia" znajdują się wszystkie nieaktywne zgłoszenia w statusie "Zamknięte zgłoszenie".
+        </p>
+        <p>
+            Zalogowany użytkownik może zalogować nowe zgłoszenie wpisując tytuł i opis zgłoszenia.
+            <br>
+            Użytkownik może również przeglądać istniejące zgłoszenia. W oknie szczegółów zgłoszenia użytkownik może dodać komentarz.
+        </p>
+        <p>
+            Użytkownik zalogowany na konto administratora może przeglądać zalogowane zgłoszenia.
+            <br>
+            W oknie szczegółów zgłoszenia administrator może zmieniać status zgłoszenia.
         </p>
     </ion-content>
  </ion-view>

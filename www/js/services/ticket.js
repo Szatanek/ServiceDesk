@@ -5,43 +5,48 @@ angular.module('utils')
             {
                 id: 1,
                 state: 1,
-                title: "First active ticket",
-                description: "test description"
+                title: "MS Sql Server 2008 R2",
+                description: "Proszę o zainstalowanie MS Sql Server 2008 R2 na serwerze."
             },
             {
                 id: 2,
                 state: 2,
-                title: "Critical ticket",
+                title: "Pilne! Zainstlować Windows 7",
+                description: "Proszę o pilne zainstalowanie Windows 7 na komputerach.",
                 alert: true
-            },
-            {
-                id: 3,
-                state: 2,
-                title: "Another ticket",
             },
             {
                 id: 4,
                 state: 1,
-                title: "Some flagged ticket",
+                title: "Nie działa",
+                description: "Aplikacja nie działa, proszę o pilny kontakt",
                 flag: true
             },
             {
                 id: 5,
                 state: 3,
-                title: "First closed ticket"
+                title: "Dodanie użytkownika",
+                description: "Proszę o utworzenie konta dla użytkownika Jan Kowalski",
+                comments: [
+                    "Konto zostało utworzone."   
+                ]
             },
             {
                 id: 6,
                 state: 3,
-                title: "Some critical closed ticket",
-                alert: true
+                title: "Problem z zalogowaniem",
+                description: "Użytkownik Grzegorz Brzęczyszczykiewicz nie może się zalogować. Proszę o rozwiązanie problemu.",
+                alert: true,
+                comments: [
+                    "Hasło użytkownika zostało zresetowane."
+                ]
             }
         ];
       
       self.states = {};
-      self.states[1] = "Open";
-      self.states[2] = "In progress";
-      self.states[3] = "Closed";
+      self.states[1] = "Otwarte zgłoszenie";
+      self.states[2] = "W trakcie realizacji";
+      self.states[3] = "Zamknięte zgłoszenie";
       
       self.ticketsRefreshCallbacks = [];
       
@@ -60,9 +65,7 @@ angular.module('utils')
           for (var i = 0; i < self.tickets.length; i++) {
               var ticket = self.tickets[i];
               if (ticket.id === updateTicket.id){
-                  console.log(JSON.stringify(ticket));
                   ticket = updateTicket;
-                  console.log(JSON.stringify(ticket));
                   self.refreshTickets();
                   return;
               }

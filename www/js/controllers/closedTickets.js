@@ -15,7 +15,7 @@ angular.module('serviceDeskApp')
                 }
             }
             
-            $scope.tickets = result;
+            $scope.tickets = result.reverse();
         }
         
         TicketService.registerTicketRefresh(self.getClosedTickets);

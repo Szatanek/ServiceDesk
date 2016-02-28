@@ -27,7 +27,9 @@
   <body ng-app="serviceDeskApp" ng-controller="MainController">
     <div class="bar bar-header bar-positive">
         <h1 class="title">Service desk</h1>
-        <span class="right" ng-if="isAuthenticated()">Hello {{ getUserName() }} !</span>
+        <div class="right" ng-if="isAuthenticated()">
+            <span class="clickable login" ng-click="loginOptionsVisible=true">Witaj {{ getUserName() }} !</span>
+        </div>
     </div>
     <ion-nav-bar class="bar-stable bar-subheader">
     </ion-nav-bar>

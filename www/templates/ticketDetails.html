@@ -1,38 +1,38 @@
-<ion-view view-title="Ticket details">
+<ion-view view-title="Szczegóły zgłoszenia">
     <ion-content class="padding">
         <div class="list">
             <label class="item item-input item-stable">
-                <span class="input-label">Title</span>
+                <span class="input-label">Tytuł</span>
                 <input type="text" ng-model="ticketDetails.title" readonly />
             </label>
             <label class="item item-input item-stable">
-                <span class="input-label">Details</span>
+                <span class="input-label">Opis</span>
                 <textarea rows="10" ng-model="ticketDetails.description" readonly></textarea>
             </label>
             <label class="item item-input item-stable">
-                <span class="input-label">State</span>
+                <span class="input-label">Status</span>
                 <span ng-bind="getState()"></span>
             </label>
             <div ng-if="ticketDetails.comments">
                 <label class="item item-input item-stable">
-                    <span class="input-label">Comments</span>
+                    <span class="input-label">Komentarze</span>
                     <div class="list">
                         <span class="item item-stable item-multiline" ng-bind="comment" ng-repeat="comment in ticketDetails.comments"></span>
                     </div>
                 </label>
             </div>
             <label ng-if="canCompleteTicket()" class="item item-input item-stable">
-                <span class="input-label">Solution</span>
-                <textarea rows="4" ng-model="solution"></textarea>
+                <span class="input-label">Rozwiązanie</span>
+                <textarea rows="4" ng-model="ticketDetails.solution"></textarea>
             </label>
         </div>
         <div class="list">
         </div>
         
         <span class="assertive" ng-bind="validationError"></span>
-        <button class="button button-full button-balanced" ng-if="canStartTicket()" ng-click="moveToInProgress()">In progress</button>
-        <button class="button button-full button-assertive" ng-if="canCompleteTicket()" ng-click="completeTicket()">Complete ticket</button>
-        <button class="button button-full button-stable" ng-click="addComment()">Add comment</button>
-        <button class="button button-full button-calm" ui-sref="tab.active">Close ticket</button>
+        <button class="button button-full button-balanced" ng-if="canStartTicket()" ng-click="moveToInProgress()">W trakcie realizacji</button>
+        <button class="button button-full button-assertive" ng-if="canCompleteTicket()" ng-click="completeTicket()">Zakończ zgłoszenie</button>
+        <button class="button button-full button-stable" ng-click="addComment()">Dodaj komentarz</button>
+        <button class="button button-full button-calm" ui-sref="tab.active">Zamknij</button>
     </ion-content>
  </ion-view>

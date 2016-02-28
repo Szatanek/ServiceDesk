@@ -6,12 +6,12 @@ angular.module('utils')
         
         self.authenticate = function(login, password, callback){
             if (!login){
-                callback(false, 'Login is empty');
+                callback(false, 'Nazwa użytkownika nie może być pusta.');
                 return;
             }
             
             if (!password){
-                callback(false, 'Password is empty');
+                callback(false, 'Hasło użytkownika nie może być puste.');
                 return;
             }
                         
@@ -35,8 +35,8 @@ angular.module('utils')
                 self.isAuthenticated = true;
                 self.user = {
                     id: 1,
-                    firstName: "Miłosz",
-                    lastName: "Wieczorek",
+                    firstName: "Adam",
+                    lastName: "Cieszyński",
                     isClient: true
                 };
                 
@@ -56,5 +56,7 @@ angular.module('utils')
                 callback(true);
                 return;
             }
+            
+            callback(false, "Wprowadzone dane użytkownika i hasło są nieprawidłowe");
         }
     }]);

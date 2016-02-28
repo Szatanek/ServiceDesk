@@ -55,12 +55,14 @@ angular.module('serviceDeskApp')
         } 
         
         $scope.completeTicket = function(){
-            if (!$scope.solution){
-                $scope.validationError = "Solution is necessary to complete ticket.";
+            if (!$scope.ticketDetails.solution){
+                $scope.validationError = "Aby zakończyć zgłoszenie należy wpisać rozwiązanie.";
                 return;
             }
             
-            $scope.ticketDetails.comments.push($scope.solution);
+            addComment($scope.ticketDetails, $scope.ticketDetails.solution);
+            $scope.ticketDetails.solution = "";
+            $scope.validationError = "";
             $scope.ticketDetails.state = 3;
             TicketService.updateTicket($scope.ticketDetails);
             $location.path("/tab/active");
@@ -103,6 +105,14 @@ angular.module('serviceDeskApp')
                     TicketService.updateTicket($scope.ticketDetails);
                 }
             });
+        }
+        
+        function addComment(ticket, comment){
+            if (!ticket.comments){
+                ticket.comments = [];
+            }
+            
+            ticket.comments.push(comment);
         }
 });
 

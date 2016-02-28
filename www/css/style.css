@@ -22,3 +22,12 @@
     .item.item-input .list .item-multiline{
         border: none;
     }
+    
+@media screen and (max-width : 500px){
+    .bar-subheader{
+        height: 88px;
+    }
+    .bar-subheader .title.title-center {
+        top: 44px !important;
+    }
+}

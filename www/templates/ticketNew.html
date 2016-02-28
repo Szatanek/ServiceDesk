@@ -1,16 +1,14 @@
-<ion-view view-title="New ticket">
+<ion-view view-title="Nowe zgłoszenie">
     <ion-content class="padding">
         <div class="list">
             <label class="item item-input">
-                <input type="text" placeholder="Title" ng-model="newTicket.title" />
+                <input type="text" placeholder="Tytuł" ng-model="newTicket.title" />
             </label>
             <label class="item item-input">
-                <textarea type="text" rows="5" placeholder="Description" ng-model="newTicket.description"></textarea>
+                <textarea type="text" rows="5" placeholder="Opis" ng-model="newTicket.description"></textarea>
             </label>
         </div>
-        <div class="button-bar">
-            <button class="button button-large button-assertive" ng-click="clearTicket()" ui-sref="tab.active">Cancel</button>
-            <button class="button button-large button-positive" ng-click="logTicket()">Log new ticket</button>
-        </div>
+        <button class="button button-full button-assertive" ng-click="clearTicket()" ui-sref="tab.active">Zamknij</button>
+        <button class="button button-full button-positive" ng-click="logTicket()">Zaloguj nowe zgłoszenie</button>
     </ion-content>
  </ion-view>
